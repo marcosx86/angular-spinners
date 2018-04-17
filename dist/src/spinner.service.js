@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-var SpinnerService = (function () {
+var SpinnerService = /** @class */ (function () {
     function SpinnerService() {
         this.spinnerCache = new Set();
     }
@@ -68,12 +68,10 @@ var SpinnerService = (function () {
         });
         return showing;
     };
+    SpinnerService.decorators = [
+        { type: Injectable },
+    ];
     return SpinnerService;
 }());
 export { SpinnerService };
-SpinnerService.decorators = [
-    { type: Injectable },
-];
-/** @nocollapse */
-SpinnerService.ctorParameters = function () { return []; };
 //# sourceMappingURL=spinner.service.js.map

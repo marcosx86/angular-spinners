@@ -1,19 +1,19 @@
-# angular-spinners
+# @chevtek/angular-spinners
 A library for easily managing loading spinners in complex Angular2+ applications.
 
 > ## NOTICE
-> angular-spinners v5 or higher is now for Angular 2 or higher. If you are looking to install the old version for Angular 1.x you may run `npm install angular-spinners@3.1.2`. That version is considered deprecated and is no longer supported unless I find a major issue, but feel free to continue using it as it has proven to be quite reliable in Angular 1.x. You will never see changes to the old version of angular-spinners except in the case of potential patch versions (3.1.x) if anything major gets reported for the old version.
+> `@chevtek/angular-spinners` v5 or higher is now for Angular 2 or higher. If you are looking to install the old version for AngularJS 1.x you may run `npm install angular-spinners@3.1.2`. Note the lack of `@chevtek/` in front of the package name. The older versions of this package were not published under the Chevtek scope. That version is considered deprecated and is no longer supported unless I find a major issue, but feel free to continue using it as it has proven to be quite reliable in AngularJS 1.x. You will never see changes to the old version of angular-spinners except in the case of potential patch versions (3.1.x) if anything major gets reported for the old version.
 
 ### Install
 
-> $ npm i angular-spinners --save
+> $ npm i @chevtek/angular-spinners --save
 
 If you're running npm v8 or higher then `--save` is implied if you don't include it.
 
 ### Quick Start
 
 ```typescript
-import { SpinnerModule } from 'angular-spinners';
+import { SpinnerModule } from '@chevtek/angular-spinners';
 
 @NgModule({
   imports: [
@@ -35,7 +35,7 @@ Next simply drop a spinner directive in your app. The only required attribute is
 Now just inject the `SpinnerService` wherever you need it.
 
 ```typescript
-import { SpinnerService } from 'angular-spinners';
+import { SpinnerService } from '@chevtek/angular-spinners';
 
 @Injectable()
 export class YourService {
@@ -155,7 +155,7 @@ Content projection is the most common way to use the `SpinnerComponent` as it al
 The most common way of interacting with your spinners is via the `spinnerService`. This service can be injected just like any other Angular service. Once you have reference to the service you can take advantage of several methods.
 
 ```typescript
-import { SpinnerService } from 'angular-spinners';
+import { SpinnerService } from '@chevtek/angular-spinners';
 
 @Injectable()
 export class YourService {

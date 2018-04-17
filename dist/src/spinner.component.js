@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { SpinnerService } from './spinner.service';
-var SpinnerComponent = (function () {
+var SpinnerComponent = /** @class */ (function () {
     function SpinnerComponent(spinnerService) {
         this.spinnerService = spinnerService;
         this.isShowing = false;
@@ -25,24 +25,24 @@ var SpinnerComponent = (function () {
     SpinnerComponent.prototype.ngOnDestroy = function () {
         this.spinnerService._unregister(this);
     };
+    SpinnerComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'spinner',
+                    template: "\n    <div *ngIf=\"show\">\n      <img *ngIf=\"loadingImage\" [src]=\"loadingImage\" />\n      <ng-content></ng-content>\n    </div>\n  "
+                },] },
+    ];
+    /** @nocollapse */
+    SpinnerComponent.ctorParameters = function () { return [
+        { type: SpinnerService, },
+    ]; };
+    SpinnerComponent.propDecorators = {
+        "name": [{ type: Input },],
+        "group": [{ type: Input },],
+        "loadingImage": [{ type: Input },],
+        "show": [{ type: Input },],
+        "showChange": [{ type: Output },],
+    };
     return SpinnerComponent;
 }());
 export { SpinnerComponent };
-SpinnerComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'spinner',
-                template: "\n    <div *ngIf=\"show\">\n      <img *ngIf=\"loadingImage\" [src]=\"loadingImage\" />\n      <ng-content></ng-content>\n    </div>\n  "
-            },] },
-];
-/** @nocollapse */
-SpinnerComponent.ctorParameters = function () { return [
-    { type: SpinnerService, },
-]; };
-SpinnerComponent.propDecorators = {
-    'name': [{ type: Input },],
-    'group': [{ type: Input },],
-    'loadingImage': [{ type: Input },],
-    'show': [{ type: Input },],
-    'showChange': [{ type: Output },],
-};
 //# sourceMappingURL=spinner.component.js.map
