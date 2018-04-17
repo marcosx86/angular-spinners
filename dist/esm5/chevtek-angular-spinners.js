@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 var SpinnerService = /** @class */ (function () {
     function SpinnerService() {
         this.spinnerCache = new Set();
@@ -68,10 +70,67 @@ var SpinnerService = /** @class */ (function () {
         });
         return showing;
     };
-    SpinnerService.decorators = [
-        { type: Injectable },
-    ];
     return SpinnerService;
 }());
-export { SpinnerService };
-//# sourceMappingURL=spinner.service.js.map
+SpinnerService.decorators = [
+    { type: Injectable },
+];
+var SpinnerComponent = /** @class */ (function () {
+    function SpinnerComponent(spinnerService) {
+        this.spinnerService = spinnerService;
+        this.isShowing = false;
+        this.showChange = new EventEmitter();
+    }
+    Object.defineProperty(SpinnerComponent.prototype, "show", {
+        get: function () {
+            return this.isShowing;
+        },
+        set: function (val) {
+            this.isShowing = val;
+            this.showChange.emit(this.isShowing);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SpinnerComponent.prototype.ngOnInit = function () {
+        if (!this.name)
+            throw new Error("Spinner must have a 'name' attribute.");
+        this.spinnerService._register(this);
+    };
+    SpinnerComponent.prototype.ngOnDestroy = function () {
+        this.spinnerService._unregister(this);
+    };
+    return SpinnerComponent;
+}());
+SpinnerComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'spinner',
+                template: "\n    <div *ngIf=\"show\">\n      <img *ngIf=\"loadingImage\" [src]=\"loadingImage\" />\n      <ng-content></ng-content>\n    </div>\n  "
+            },] },
+];
+SpinnerComponent.ctorParameters = function () { return [
+    { type: SpinnerService, },
+]; };
+SpinnerComponent.propDecorators = {
+    "name": [{ type: Input },],
+    "group": [{ type: Input },],
+    "loadingImage": [{ type: Input },],
+    "show": [{ type: Input },],
+    "showChange": [{ type: Output },],
+};
+var SpinnerModule = /** @class */ (function () {
+    function SpinnerModule() {
+    }
+    return SpinnerModule;
+}());
+SpinnerModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [SpinnerComponent],
+                imports: [CommonModule],
+                exports: [SpinnerComponent],
+                providers: [SpinnerService]
+            },] },
+];
+
+export { SpinnerComponent, SpinnerService, SpinnerModule };
+//# sourceMappingURL=chevtek-angular-spinners.js.map
