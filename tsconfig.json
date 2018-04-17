@@ -12,13 +12,13 @@
       "es2017",
       "dom"
     ],
-    "files": [
-      "index.ts"
-    ],
     "typeRoots": [
       "node_modules/@types"
     ],
   },
+  "files": [
+    "index.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
