@@ -4,7 +4,7 @@
   "description": "Easy loading spinner management for apps running Angular 2+",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/chevtek/angular-spinners.git"
+    "url": "git+ssh://git@github.com/sdornan/angular-spinners.git"
   },
   "keywords": [
     "angular",
@@ -19,9 +19,9 @@
   "author": "Alex Ford",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chevtek/angular-spinners/issues"
+    "url": "https://github.com/sdornan/angular-spinners/issues"
   },
-  "homepage": "https://github.com/chevtek/angular-spinners#readme",
+  "homepage": "https://github.com/sdornan/angular-spinners#readme",
   "devDependencies": {
     "@angular/cli": "1.7.4",
     "@angular/compiler": ">=5.2.0",
