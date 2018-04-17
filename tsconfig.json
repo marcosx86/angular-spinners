@@ -8,11 +8,6 @@
     "noImplicitAny": true,
     "module": "es2015",
     "moduleResolution": "node",
-    "paths": {
-      "@angular/core": ["node_modules/@angular/core"],
-      "@angular/common": ["node_modules/@angular/common"],
-      "rxjs/*": ["node_modules/rxjs/*"]
-    },
     "rootDir": ".",
     "outDir": "dist",
     "sourceMap": true,
